@@ -908,8 +908,12 @@ pub mod select {
         pub extern fn node_is_enabled(_pw: *c_void, _node: *c_void, _match_: *bool) -> css_error {
             unimpl("node_is_enabled")
         }
-        pub extern fn node_is_disabled(_pw: *c_void, _node: *c_void, _match_: *bool) -> css_error {
-            unimpl("node_is_disabled")
+        pub extern fn node_is_disabled(_pw: *c_void, _node: *c_void, match_: *mut bool) -> css_error {
+            unimpl_warn("node_is_disabled");
+            unsafe {
+                *match_ = false;
+                CSS_OK
+            }
         }
         pub extern fn node_is_checked(_pw: *c_void, _node: *c_void, _match_: *bool) -> css_error {
             unimpl("node_is_checked")

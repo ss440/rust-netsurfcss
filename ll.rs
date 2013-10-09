@@ -574,7 +574,7 @@ pub mod select {
         node_is_active: extern "C" fn(*c_void, *c_void, *mut bool) -> css_error,
         node_is_focus: extern "C" fn(*c_void, *c_void, *mut bool) -> css_error,
         node_is_enabled: extern "C" fn(*c_void, *c_void, *bool) -> css_error,
-        node_is_disabled: extern "C" fn(*c_void, *c_void, *bool) -> css_error,
+        node_is_disabled: extern "C" fn(*c_void, *c_void, *mut bool) -> css_error,
         node_is_checked: extern "C" fn(*c_void, *c_void, *bool) -> css_error,
         node_is_target: extern "C" fn(*c_void, *c_void, *mut bool) -> css_error,
         node_is_lang: extern "C" fn(*c_void, *c_void, *lwc_string, *mut bool) -> css_error,
